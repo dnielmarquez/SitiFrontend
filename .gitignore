@@ -9,8 +9,7 @@ node_modules
 coverage
 
 # production
-build
-dist
+
 out
 .next
 
