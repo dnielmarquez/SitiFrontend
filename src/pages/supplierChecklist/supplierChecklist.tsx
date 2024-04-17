@@ -45,22 +45,28 @@ const SupplierChecklist = () => {
       try {
         if (orderId) {
           const orderData = await getRequestById(orderId);
+
           const orderDataFixed = { ...orderData };
-          console.log(orderData);
           orderDataFixed.productRequirements = JSON.parse(orderDataFixed.productRequirements);
+          console.log('productRequirements', orderDataFixed.productRequirements);
           if (orderDataFixed.systemReview) {
             const systemReviewJson = JSON.parse(orderDataFixed.systemReview);
             setSystemReviewData(systemReviewJson);
             // Check all machining validationStatus
-            const allMachiningValidated = systemReviewJson.machiningValidation.every(
-              (item: any) => item.validationStatus === true
-            );
-            setAllMachiningValidated(allMachiningValidated);
+            if (systemReviewJson.machiningValidation) {
+              const allMachiningValidated = systemReviewJson.machiningValidation.every(
+                (item: any) => item.validationStatus === true
+              );
+
+              setAllMachiningValidated(allMachiningValidated);
+            }
             // Check all coating validationStatus
-            const allCoatingValidated = systemReviewJson.coatingValidation.every((batch: any) =>
-              batch.samples.every((sample: any) => sample.validationStatus === true)
-            );
-            setAllCoatingValidated(allCoatingValidated);
+            if (systemReviewJson.coatingValidation) {
+              const allCoatingValidated = systemReviewJson.coatingValidation.every((batch: any) =>
+                batch.samples.every((sample: any) => sample.validationStatus === true)
+              );
+              setAllCoatingValidated(allCoatingValidated);
+            }
           }
           setOrder(orderDataFixed);
         } else {
