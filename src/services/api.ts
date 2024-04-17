@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:3005/api',
+    baseURL: 'https://mputmblkchain.online/api',
     timeout: 100000,
     headers: {
         'Content-Type': 'application/json',
