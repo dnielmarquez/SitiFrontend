@@ -137,7 +137,7 @@ const RequestSummary = () => {
       }).then((canvas) => {
         // Guardar la altura del elemento en el arreglo
         console.log("canvas height: ",canvas.height);
-        elementHeights.push(canvas.height);
+        elementHeights.push(canvas.height*1.1);
         return canvas;
       })
     );
