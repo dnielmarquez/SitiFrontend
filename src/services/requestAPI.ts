@@ -19,7 +19,7 @@ export const updateRequest = async (requestId: string, data: Request) => {
     const response = await api.put(`/request/${requestId}`, data);
     return response.data;
   } catch (error) {
-    console.error('Error updating request:', error.message);
+    console.error('Error updating request-update:', error.message);
     throw error;
   }
 };
@@ -34,7 +34,7 @@ export const uploadToBlockchain = async (requestId: string, data: FormData) => {
 
     return response.data;
   } catch (error) {
-    console.error('Error updating request:', error.message);
+    console.error('Error updating request to blockchain:', error.message);
     throw error;
   }
 };
@@ -48,7 +48,7 @@ export const updateRequestWithToken = async (requestId: string, data: Request, t
     });
     return response.data;
   } catch (error) {
-    console.error('Error updating request:', error.message);
+    console.error('Error updating request with token:', error.message);
     throw error;
   }
 };
@@ -96,7 +96,7 @@ export const reviewRequest = async (
     const response = await api.put(`/request/${requestId}`, data);
     return response.data;
   } catch (error) {
-    console.error('Error updating request:', error.message);
+    console.error('Error updating request review:', error.message);
     throw error;
   }
 };
