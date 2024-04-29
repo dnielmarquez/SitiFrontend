@@ -788,7 +788,7 @@ const RequestSummary = () => {
                           >
                             <Box
                               component="img"
-                              src={`http://localhost:3005${photo}`}
+                              src={`https://mputmblkchain.online${photo}`}
                               alt={`Batch ${coating.batchNumber} Sample ${sampleIndex + 1} Photo ${
                                 photoIndex + 1
                               }`}
@@ -1441,7 +1441,7 @@ const RequestSummary = () => {
                             >
                               <Box
                                 component="img"
-                                src={`http://localhost:3005${photo}`}
+                                src={`https://mputmblkchain.online${photo}`}
                                 alt={`Batch ${coating.batchNumber} Sample ${
                                   sampleIndex + 1
                                 } Photo ${photoIndex + 1}`}
