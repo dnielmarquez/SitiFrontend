@@ -32,6 +32,7 @@ import JsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 import { useUser } from 'src/contexts/user/userContext';
+import { overflowWrap } from 'html2canvas/dist/types/css/property-descriptors/overflow-wrap';
 
 const RequestSummary = () => {
   const { orderId } = useParams<{ orderId: string }>();
@@ -1041,6 +1042,7 @@ const RequestSummary = () => {
                       <TableCell
                         component="th"
                         scope="row"
+                        sx={{ overflowWrap: 'anywhere' }}
                       >
                         {row.traceabilityNumber}
                       </TableCell>
@@ -1302,6 +1304,7 @@ const RequestSummary = () => {
                         <TableCell
                           component="th"
                           scope="row"
+                          sx={{ overflowWrap: 'anywhere' }}
                         >
                           {row.batchNumber}
                         </TableCell>
@@ -1311,7 +1314,12 @@ const RequestSummary = () => {
                             <TableBody>
                               {row.traceabilityNumbers?.map((trace: any, indexTrace: number) => (
                                 <TableRow key={indexTrace}>
-                                  <TableCell align="left">{trace}</TableCell>
+                                  <TableCell
+                                    align="left"
+                                    sx={{ overflowWrap: 'anywhere' }}
+                                  >
+                                    {trace}
+                                  </TableCell>
                                 </TableRow>
                               ))}
                             </TableBody>
