@@ -119,6 +119,7 @@ const CoatingChecklist: React.FC<CoatingChecklistProps> = ({ setters }) => {
       const dataToSubmit = {
         reviewedCoating: transformedBatches,
       };
+      console.log("data para actualizar", dataToSubmit);
 
       await reviewRequest(setters.orderId, dataToSubmit, 'COATING');
 

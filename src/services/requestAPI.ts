@@ -80,7 +80,7 @@ export const uploadImages = async (files: File[]) => {
         'Content-Type': 'multipart/form-data',
       },
     });
-    console.log("Response to upload", response);
+    console.log('Response to upload', response);
     return response.data;
   } catch (error) {
     console.error('Error uploading images:', error.message);
@@ -94,6 +94,7 @@ export const reviewRequest = async (
 ) => {
   try {
     const response = await api.put(`/request/${requestId}`, data);
+    console.log('response review', response);
     return response.data;
   } catch (error) {
     console.error('Error updating request review:', error.message);
