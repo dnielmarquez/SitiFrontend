@@ -136,8 +136,8 @@ const RequestSummary = () => {
         width: inputElement.clientWidth,
       }).then((canvas) => {
         // Guardar la altura del elemento en el arreglo
-        console.log("canvas height: ",canvas.height);
-        elementHeights.push(canvas.height*1.1);
+        console.log('canvas height: ', canvas.height);
+        elementHeights.push(canvas.height * 1.1);
         return canvas;
       })
     );
@@ -918,9 +918,10 @@ const RequestSummary = () => {
                     align="left"
                     colSpan={2}
                   >
-                    Scratch: {order?.productRequirements?.Scratches ? 'Allowed' : 'Not Allowed'}
+                    Scratch:{' '}
+                    {order?.productRequirements?.Scratches == true ? 'Allowed' : 'Not Allowed'}
                     <br />
-                    Dent: {order?.productRequirements?.Dented ? 'Allowed' : 'Not Allowed'}
+                    Dent: {order?.productRequirements?.Dented == true ? 'Allowed' : 'Not Allowed'}
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -1187,7 +1188,8 @@ const RequestSummary = () => {
                       align="left"
                       colSpan={2}
                     >
-                      Porosity: {order?.productRequirements?.Porosity ? 'Allowed' : 'Not Allowed'}
+                      Porosity:{' '}
+                      {order?.productRequirements?.Porosity == true ? 'Allowed' : 'Not Allowed'}
                     </TableCell>
                   </TableRow>
                   <TableRow>
